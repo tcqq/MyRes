@@ -1,5 +1,6 @@
 package com.android.myres.ui.account;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
@@ -26,6 +27,9 @@ public class LoginActivity extends BaseActivity {
         String[] userRoles = new String[]{"Client", "Waitress", "Restaurant Owner", "Kitchen Worker"};
         binding.role.setAdapter(new SpinnerAdapter(this, userRoles));
 
+        binding.createAccount.setOnClickListener( view -> {
+            startActivity(new Intent(this, ClientRegisterActivity.class));
+        });
         binding.signIn.setOnClickListener(view -> {
             String selectedRole = binding.role.getText().toString();
             if (selectedRole.isEmpty()) {

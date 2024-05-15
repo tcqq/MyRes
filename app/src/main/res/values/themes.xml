@@ -23,8 +23,5 @@
         <item name="appBarLayoutStyle">@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface</item>
         <item name="actionOverflowButtonStyle">@style/ActionOverflowButtonStyle</item>
         <item name="textInputStyle">@style/TextInputLayoutStyle</item>
-
-        <!-- Attrs styles -->
-        <item name="outlinedButton">@style/Widget.Material3.Button.OutlinedButton</item>
     </style>
 </resources>

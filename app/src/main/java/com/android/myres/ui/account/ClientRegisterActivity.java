@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 
 import com.android.myres.R;
+import com.android.myres.common.adapter.SpinnerAdapter;
 import com.android.myres.common.base.BaseActivity;
 import com.android.myres.databinding.ActivityClientRegisterBinding;
 
@@ -21,5 +22,8 @@ public class ClientRegisterActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_client_register);
         setActionBar(binding.toolbar);
         setActionBarTitle("Client Register");
+
+        String[] genders = new String[] {"Male", "Female"};
+        binding.gender.setAdapter(new SpinnerAdapter(this, genders));
     }
 }
