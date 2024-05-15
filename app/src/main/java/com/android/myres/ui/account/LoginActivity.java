@@ -28,7 +28,43 @@ public class LoginActivity extends BaseActivity {
 
         binding.signIn.setOnClickListener(view -> {
             String selectedRole = binding.role.getText().toString();
-            showToast("Sign in: " + selectedRole);
+            if (selectedRole.isEmpty()) {
+                showToast("Please select a role");
+            } else {
+                int roleId = getRoleId(selectedRole);
+                switch (roleId) {
+                    case 0:
+                        showToast("Sign in: Client");
+                        break;
+                    case 1:
+                        showToast("Sign in: Waitress");
+                        break;
+                    case 2:
+                        showToast("Sign in: Restaurant Owner");
+                        break;
+                    case 3:
+                        showToast("Sign in: Kitchen Worker");
+                        break;
+                    default:
+                        showToast("Unknown role");
+                        break;
+                }
+            }
         });
+    }
+
+    private int getRoleId(String role) {
+        switch (role) {
+            case "Client":
+                return 0;
+            case "Waitress":
+                return 1;
+            case "Restaurant Owner":
+                return 2;
+            case "Kitchen Worker":
+                return 3;
+            default:
+                return -1;
+        }
     }
 }
