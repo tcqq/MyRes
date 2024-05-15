@@ -13,13 +13,31 @@
         android:theme="@style/Theme.MyRes"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.account.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.account.ClientRegisterActivity" />
+        <activity android:name=".ui.home.ClientHomeActivity" />
+        <activity android:name=".ui.restaurant.RestaurantDetailActivity" />
+        <activity android:name=".ui.restaurant.MenuActivity" />
+        <activity android:name=".ui.order.OrderTrackingActivity" />
+        <activity android:name=".ui.order.PaymentActivity" />
+        <activity android:name=".ui.restaurant.ReviewActivity" />
+        <activity android:name=".ui.service.ServiceRequestActivity" />
+        <activity android:name=".ui.home.OwnerHomeActivity" />
+        <activity android:name=".ui.restaurant.AddRestaurantActivity" />
+        <activity android:name=".ui.restaurant.UpdateRestaurantActivity" />
+        <activity android:name=".ui.restaurant.MenuManagementActivity" />
+        <activity android:name=".ui.account.AddWaitressActivity" />
+        <activity android:name=".ui.account.AddKitchenWorkerActivity" />
+        <activity android:name=".ui.restaurant.ViewReviewsActivity" />
+        <activity android:name=".ui.home.WaitressHomeActivity" />
+        <activity android:name=".ui.home.KitchenWorkerHomeActivity" />
     </application>
 
 </manifest>
