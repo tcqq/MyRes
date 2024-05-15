@@ -2,10 +2,10 @@
 MyRes is a restaurant management application to help customers, waiters and restaurant owners through mobile applications to manage restaurants, menus and allow customers to order online.
 
 #### User role
-- Customer (Client)
+- Client
 - Waitress
-- Restaurant owner (Restaurant Owner)
-- Kitchen worker (Kitchen Worker)
+- Restaurant Owner
+- Kitchen Worker
 
 | Page Name          | XML Layout File                   | Activity Name                | Purpose                                                        |
 |--------------------|-----------------------------------|------------------------------|----------------------------------------------------------------|
