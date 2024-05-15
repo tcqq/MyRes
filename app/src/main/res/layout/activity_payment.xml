@@ -25,65 +25,84 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/order_total"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Order Total: $50"
-                    android:textAppearance="?attr/textAppearanceHeadline6" />
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/text_input_layout_card_number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/card_number"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Card Number" />
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical">
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        <TextView
+                            android:id="@+id/order_total"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Order Total: $50"
+                            android:textAppearance="?attr/textAppearanceHeadline6" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/text_input_layout_card_expiry"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_layout_card_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/card_expiry"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Card Expiry (MM/YY)" />
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/card_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Card Number" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/text_input_layout_card_cvc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_layout_card_expiry"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/card_cvc"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Card CVC" />
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/card_expiry"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Card Expiry (MM/YY)" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/pay_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:text="Pay"
-                    android:textAppearance="?attr/textAppearanceButton" />
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_layout_card_cvc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/card_cvc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Card CVC" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/pay_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="32dp"
+                            android:text="Pay"
+                            android:textAppearance="?attr/textAppearanceButton" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
 

@@ -21,5 +21,18 @@ public class ReviewActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_review);
         setActionBar(binding.toolbar);
         setActionBarTitle("Review");
+
+        binding.submitButton.setOnClickListener(v -> {
+            float rating = binding.ratingBar.getRating();
+            String reviewText = binding.reviewText.getText().toString().trim();
+
+            if (rating == 0) {
+                showToast("Please provide a rating");
+            } else if (reviewText.isEmpty()) {
+                showToast("Please write a review");
+            } else {
+                showToast("Review Submitted");
+            }
+        });
     }
 }
