@@ -1,9 +1,10 @@
-package com.android.myres.base;
+package com.android.myres.common.base;
 
 import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,6 +55,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    public void showToast(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    }
 
     /**
      * Click on the blank space to close the soft keyboard and make the EditText lose focus.

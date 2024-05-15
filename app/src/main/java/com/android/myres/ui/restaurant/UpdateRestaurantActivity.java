@@ -5,9 +5,12 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 
 import com.android.myres.R;
-import com.android.myres.base.BaseActivity;
+import com.android.myres.common.base.BaseActivity;
 import com.android.myres.databinding.ActivityUpdateRestaurantBinding;
 
+/**
+ * Allows restaurant owners to update restaurant details
+ */
 public class UpdateRestaurantActivity extends BaseActivity {
 
     private ActivityUpdateRestaurantBinding binding;

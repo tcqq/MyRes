@@ -5,9 +5,12 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 
 import com.android.myres.R;
-import com.android.myres.base.BaseActivity;
+import com.android.myres.common.base.BaseActivity;
 import com.android.myres.databinding.ActivityWaitressHomeBinding;
 
+/**
+ * Waitress home page with order list and service request notifications
+ */
 public class WaitressHomeActivity extends BaseActivity {
 
     private ActivityWaitressHomeBinding binding;

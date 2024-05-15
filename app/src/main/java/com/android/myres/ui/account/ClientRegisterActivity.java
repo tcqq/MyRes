@@ -5,9 +5,12 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 
 import com.android.myres.R;
-import com.android.myres.base.BaseActivity;
+import com.android.myres.common.base.BaseActivity;
 import com.android.myres.databinding.ActivityClientRegisterBinding;
 
+/**
+ * Client registration, including form fields for name, phone, gender, email, and password
+ */
 public class ClientRegisterActivity extends BaseActivity {
 
     private ActivityClientRegisterBinding binding;

@@ -5,9 +5,12 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 
 import com.android.myres.R;
-import com.android.myres.base.BaseActivity;
+import com.android.myres.common.base.BaseActivity;
 import com.android.myres.databinding.ActivityMenuManagementBinding;
 
+/**
+ * Allows adding, updating, or deleting menu items
+ */
 public class MenuManagementActivity extends BaseActivity {
 
     private ActivityMenuManagementBinding binding;

@@ -5,9 +5,12 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 
 import com.android.myres.R;
-import com.android.myres.base.BaseActivity;
+import com.android.myres.common.base.BaseActivity;
 import com.android.myres.databinding.ActivityMenuBinding;
 
+/**
+ * Displays menu items, allows adding notes and placing orders
+ */
 public class MenuActivity extends BaseActivity {
 
     private ActivityMenuBinding binding;

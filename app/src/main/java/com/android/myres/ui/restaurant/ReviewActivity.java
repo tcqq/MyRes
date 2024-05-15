@@ -5,9 +5,12 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 
 import com.android.myres.R;
-import com.android.myres.base.BaseActivity;
+import com.android.myres.common.base.BaseActivity;
 import com.android.myres.databinding.ActivityReviewBinding;
 
+/**
+ * Allows clients to leave reviews after payment
+ */
 public class ReviewActivity extends BaseActivity {
 
     private ActivityReviewBinding binding;

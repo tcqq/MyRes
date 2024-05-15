@@ -5,9 +5,12 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 
 import com.android.myres.R;
-import com.android.myres.base.BaseActivity;
+import com.android.myres.common.base.BaseActivity;
 import com.android.myres.databinding.ActivityPaymentBinding;
 
+/**
+ * Simulates payment functionality and shows total order price
+ */
 public class PaymentActivity extends BaseActivity {
 
     private ActivityPaymentBinding binding;

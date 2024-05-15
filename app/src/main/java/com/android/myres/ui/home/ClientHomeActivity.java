@@ -5,9 +5,12 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 
 import com.android.myres.R;
-import com.android.myres.base.BaseActivity;
+import com.android.myres.common.base.BaseActivity;
 import com.android.myres.databinding.ActivityClientHomeBinding;
 
+/**
+ * Displays restaurant list with search and sorting options
+ */
 public class ClientHomeActivity extends BaseActivity {
 
     private ActivityClientHomeBinding binding;
