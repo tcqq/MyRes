@@ -7,6 +7,8 @@ MyRes is a restaurant management application to help customers, waiters and rest
 - Restaurant Owner
 - Kitchen Worker
 
+---
+
 | Page Name          | XML Layout File                   | Activity Name                | Purpose                                                        |
 |--------------------|-----------------------------------|------------------------------|----------------------------------------------------------------|
 | Client Register Page| `activity_client_register.xml`     | `ClientRegisterActivity`      | Client registration, including form fields for name, phone, gender, email, and password |
