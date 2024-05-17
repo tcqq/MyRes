@@ -7,7 +7,6 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -18,19 +17,67 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Owner Home" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        </LinearLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/add_restaurant_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Restaurant"
+                    android:textAppearance="?attr/textAppearanceButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/update_restaurant_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Update Restaurant"
+                    android:textAppearance="?attr/textAppearanceButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/menu_management_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Menu Management"
+                    android:textAppearance="?attr/textAppearanceButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/add_waitress_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Add Waitress"
+                    android:textAppearance="?attr/textAppearanceButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/add_kitchen_worker_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Add Kitchen Worker"
+                    android:textAppearance="?attr/textAppearanceButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/view_reviews_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="View Reviews"
+                    android:textAppearance="?attr/textAppearanceButton" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
