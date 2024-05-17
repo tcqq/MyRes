@@ -21,5 +21,7 @@ public class ServiceRequestActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_service_request);
         setActionBar(binding.toolbar);
         setActionBarTitle("Service Request");
+
+        binding.requestServiceButton.setOnClickListener(v -> showToast("Service Requested"));
     }
 }
