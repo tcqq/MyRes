@@ -21,5 +21,9 @@ public class MenuManagementActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_menu_management);
         setActionBar(binding.toolbar);
         setActionBarTitle("Menu Management");
+
+        binding.addDishButton.setOnClickListener(v -> showToast("AddDish"));
+        binding.updateDishButton.setOnClickListener(v -> showToast("UpdateDish"));
+        binding.deleteDishButton.setOnClickListener(v -> showToast("DeleteDish"));
     }
 }
