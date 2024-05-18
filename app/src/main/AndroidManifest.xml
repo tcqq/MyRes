@@ -28,8 +28,11 @@
         <activity android:name=".ui.restaurant.MenuActivity" />
         <activity android:name=".ui.order.OrderTrackingActivity" />
         <activity android:name=".ui.order.PaymentActivity" />
+        <activity android:name=".ui.order.ViewOrdersActivity" />
+        <activity android:name=".ui.order.UpdateOrderStatusActivity" />
         <activity android:name=".ui.restaurant.ReviewActivity" />
         <activity android:name=".ui.service.ServiceRequestActivity" />
+        <activity android:name=".ui.service.ViewServiceRequestsActivity" />
         <activity android:name=".ui.home.OwnerHomeActivity" />
         <activity android:name=".ui.restaurant.AddRestaurantActivity" />
         <activity android:name=".ui.restaurant.UpdateRestaurantActivity" />

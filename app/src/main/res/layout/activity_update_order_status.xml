@@ -28,18 +28,42 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/view_orders_button"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/text_input_layout_order_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/order_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Order Number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/text_input_layout_order_status"
+                    style="@style/ExposedDropdownMenuStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="View Orders"
-                    android:textAppearance="?attr/textAppearanceButton" />
+                    android:layout_marginTop="16dp">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/order_status"
+                        style="@style/Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:focusableInTouchMode="true"
+                        android:hint="Order Status" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/update_order_status_button"
+                    android:id="@+id/update_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="32dp"
                     android:text="Update Order Status"
                     android:textAppearance="?attr/textAppearanceButton" />
 
