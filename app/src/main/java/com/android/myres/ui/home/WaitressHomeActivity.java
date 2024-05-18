@@ -21,5 +21,8 @@ public class WaitressHomeActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_waitress_home);
         setActionBar(binding.toolbar);
         setActionBarTitle("Waitress Home");
+
+        binding.viewOrdersButton.setOnClickListener(v -> showToast("ViewOrders"));
+        binding.viewServiceRequestsButton.setOnClickListener(v -> showToast("ViewServiceRequests"));
     }
 }
