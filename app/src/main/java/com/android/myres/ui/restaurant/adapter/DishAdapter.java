@@ -1,13 +1,15 @@
 package com.android.myres.ui.restaurant.adapter;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.android.myres.databinding.ItemDishBinding;
 import com.android.myres.ui.restaurant.MenuManagementActivity;
 import com.android.myres.ui.restaurant.data.Dish;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -69,6 +71,7 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder
 
         public void bind(Dish dish, MenuManagementActivity handler) {
             binding.setDish(dish);
+            Glide.with(binding.dishImage.getContext()).load(dish.getImageUrl()).into(binding.dishImage);
             binding.executePendingBindings();
         }
     }
