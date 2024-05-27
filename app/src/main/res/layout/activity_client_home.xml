@@ -7,6 +7,7 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
+            android:visibility="gone"
             android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -118,42 +119,15 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="64dp"
-                            android:background="?attr/selectableItemBackground"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:gravity="center_vertical"
-                            android:paddingStart="16dp"
-                            android:paddingEnd="16dp"
-                            android:text="Restaurant A"
-                            android:textAppearance="?attr/textAppearanceBody1" />
 
-                        <androidx.appcompat.widget.AppCompatTextView
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_restaurants"
                             android:layout_width="match_parent"
-                            android:layout_height="64dp"
-                            android:background="?attr/selectableItemBackground"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:gravity="center_vertical"
-                            android:paddingStart="16dp"
-                            android:paddingEnd="16dp"
-                            android:text="Restaurant B"
-                            android:textAppearance="?attr/textAppearanceBody1" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="64dp"
-                            android:background="?attr/selectableItemBackground"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:gravity="center_vertical"
-                            android:paddingStart="16dp"
-                            android:paddingEnd="16dp"
-                            android:text="Restaurant C"
-                            android:textAppearance="?attr/textAppearanceBody1" />
-
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:clipToPadding="false"
+                            android:scrollbars="vertical"/>
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>

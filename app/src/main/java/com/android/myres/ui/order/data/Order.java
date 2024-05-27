@@ -1,29 +1,33 @@
 package com.android.myres.ui.order.data;
 
-/**
- * @author Perry Lance
- * @since 2024-05-18 Created
- */
 public class Order {
-    private String orderNumber;
-    private String orderDetails;
-    private String orderStatus;
 
-    public Order(String orderNumber, String orderDetails, String orderStatus) {
-        this.orderNumber = orderNumber;
-        this.orderDetails = orderDetails;
-        this.orderStatus = orderStatus;
+    private String orderId;
+    private String status;
+    // Add other fields as necessary
+
+    public Order() {
+        // Default constructor required for calls to DataSnapshot.getValue(Order.class)
     }
 
-    public String getOrderNumber() {
-        return orderNumber;
+    public Order(String orderId, String status) {
+        this.orderId = orderId;
+        this.status = status;
     }
 
-    public String getOrderDetails() {
-        return orderDetails;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public String getOrderStatus() {
-        return orderStatus;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

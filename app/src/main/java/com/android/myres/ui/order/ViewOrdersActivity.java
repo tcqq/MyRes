@@ -2,25 +2,29 @@ package com.android.myres.ui.order;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.myres.R;
+import com.android.myres.common.base.BaseActivity;
 import com.android.myres.databinding.ActivityViewOrdersBinding;
 import com.android.myres.ui.order.adapter.OrderAdapter;
 import com.android.myres.ui.order.data.Order;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Perry Lance
- * @since 2024-05-18 Created
+ * Displays a list of orders for the kitchen worker
  */
-public class ViewOrdersActivity extends AppCompatActivity {
+public class ViewOrdersActivity extends BaseActivity {
 
     private ActivityViewOrdersBinding binding;
+    private FirebaseFirestore firestore;
+    private OrderAdapter adapter;
+    private List<Order> orderList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,22 +33,31 @@ public class ViewOrdersActivity extends AppCompatActivity {
         setActionBar(binding.toolbar);
         setActionBarTitle("View Orders");
 
+        firestore = FirebaseFirestore.getInstance();
+        orderList = new ArrayList<>();
+        adapter = new OrderAdapter(orderList);
+
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        List<Order> orderList = new ArrayList<>();
-        orderList.add(new Order("Order #1", "Dish A, Dish B", "Pending"));
-        orderList.add(new Order("Order #2", "Dish C, Dish D", "In Progress"));
-        orderList.add(new Order("Order #3", "Dish E, Dish F", "Completed"));
-        OrderAdapter adapter = new OrderAdapter(orderList);
         binding.recyclerView.setAdapter(adapter);
+
+        loadOrders();
     }
 
-    private void setActionBar(androidx.appcompat.widget.Toolbar toolbar) {
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    private void setActionBarTitle(String title) {
-        getSupportActionBar().setTitle(title);
+    private void loadOrders() {
+        firestore.collection("orders")
+                .whereEqualTo("status", "Received")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        orderList.clear();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            Order order = document.toObject(Order.class);
+                            orderList.add(order);
+                        }
+                        adapter.notifyDataSetChanged();
+                    } else {
+                        showToast("Failed to load orders");
+                    }
+                });
     }
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyRes</string>
+    <string name="google_maps_key">AIzaSyCT1LawqV43MkqtMqwUuKVSArVpRNdQ5aA</string>
 </resources>

@@ -24,17 +24,29 @@ public class RestaurantDetailActivity extends BaseActivity {
         setActionBar(binding.toolbar);
         setActionBarTitle("Restaurant Detail");
 
+        // Assuming data is passed via intent
+        Intent intent = getIntent();
+        String restaurantName = intent.getStringExtra("name");
+        String restaurantAddress = intent.getStringExtra("address");
+        String restaurantHours = intent.getStringExtra("hours");
+        double restaurantRating = intent.getDoubleExtra("rating", 0.0);
+
+        binding.restaurantName.setText(restaurantName);
+        binding.restaurantAddress.setText(restaurantAddress);
+        binding.restaurantHours.setText(restaurantHours);
+        binding.restaurantRating.setText(String.format("Rating: %.1f", restaurantRating));
+
         binding.navigationButton.setOnClickListener(v -> {
-            String address = binding.restaurantAddress.getText().toString();
-            Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + Uri.encode(address));
+            Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + Uri.encode(restaurantAddress));
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
             mapIntent.setPackage("com.google.android.apps.maps");
             startActivity(mapIntent);
         });
 
         binding.menuButton.setOnClickListener(v -> {
-            Intent intent = new Intent(this, MenuActivity.class);
-            startActivity(intent);
+            Intent menuIntent = new Intent(this, MenuClientActivity.class);
+            menuIntent.putExtra("restaurantId", intent.getStringExtra("restaurantId")); // Pass restaurant ID
+            startActivity(menuIntent);
         });
     }
 }

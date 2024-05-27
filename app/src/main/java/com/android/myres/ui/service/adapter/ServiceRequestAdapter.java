@@ -1,4 +1,4 @@
-package com.android.myres.ui.service.adapter;
+package com.android.myres.ui.service;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +13,7 @@ import com.android.myres.ui.service.data.ServiceRequest;
 
 import java.util.List;
 
-/**
- * @author Perry Lance
- * @since 2024-05-18 Created
- */
-public class ServiceRequestAdapter extends RecyclerView.Adapter<ServiceRequestAdapter.ViewHolder> {
+public class ServiceRequestAdapter extends RecyclerView.Adapter<ServiceRequestAdapter.ServiceRequestViewHolder> {
 
     private List<ServiceRequest> serviceRequestList;
 
@@ -27,17 +23,16 @@ public class ServiceRequestAdapter extends RecyclerView.Adapter<ServiceRequestAd
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ServiceRequestViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_service_request, parent, false);
-        return new ViewHolder(view);
+        return new ServiceRequestViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ServiceRequestViewHolder holder, int position) {
         ServiceRequest serviceRequest = serviceRequestList.get(position);
-        holder.requestNumberTextView.setText(serviceRequest.getRequestNumber());
-        holder.requestDetailsTextView.setText(serviceRequest.getRequestDetails());
-        holder.requestStatusTextView.setText(serviceRequest.getRequestStatus());
+        holder.userNameTextView.setText(serviceRequest.getUserName());
+        holder.timestampTextView.setText(String.valueOf(serviceRequest.getTimestamp()));
     }
 
     @Override
@@ -45,16 +40,15 @@ public class ServiceRequestAdapter extends RecyclerView.Adapter<ServiceRequestAd
         return serviceRequestList.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView requestNumberTextView;
-        TextView requestDetailsTextView;
-        TextView requestStatusTextView;
+    static class ServiceRequestViewHolder extends RecyclerView.ViewHolder {
 
-        ViewHolder(View itemView) {
+        TextView userNameTextView;
+        TextView timestampTextView;
+
+        public ServiceRequestViewHolder(@NonNull View itemView) {
             super(itemView);
-            requestNumberTextView = itemView.findViewById(R.id.request_number_text_view);
-            requestDetailsTextView = itemView.findViewById(R.id.request_details_text_view);
-            requestStatusTextView = itemView.findViewById(R.id.request_status_text_view);
+            userNameTextView = itemView.findViewById(R.id.user_name_text_view);
+            timestampTextView = itemView.findViewById(R.id.timestamp_text_view);
         }
     }
 }

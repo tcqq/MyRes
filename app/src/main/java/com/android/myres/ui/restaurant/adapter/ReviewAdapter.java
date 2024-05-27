@@ -3,60 +3,56 @@ package com.android.myres.ui.restaurant.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.AppCompatRatingBar;
 
 import com.android.myres.R;
 import com.android.myres.ui.restaurant.data.Review;
 
 import java.util.List;
 
-/**
- * @author Perry Lance
- * @since 2024-05-18 Created
- */
+public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder> {
 
-public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder> {
+    private List<Review> reviews;
 
-    private List<Review> reviewList;
-
-    public ReviewAdapter(List<Review> reviewList) {
-        this.reviewList = reviewList;
+    public ReviewAdapter(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ReviewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_review, parent, false);
-        return new ViewHolder(view);
+        return new ReviewViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Review review = reviewList.get(position);
-        holder.nameTextView.setText(review.getName());
-        holder.ratingBar.setRating(review.getRating());
-        holder.reviewTextView.setText(review.getReview());
+    public void onBindViewHolder(@NonNull ReviewViewHolder holder, int position) {
+        Review review = reviews.get(position);
+        holder.name.setText(review.getName());
+        holder.rating.setRating(review.getRating());
+        holder.comment.setText(review.getComment());
+        holder.contact.setText(review.getContact());
     }
 
     @Override
     public int getItemCount() {
-        return reviewList.size();
+        return reviews.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView nameTextView;
-        RatingBar ratingBar;
-        TextView reviewTextView;
+    public static class ReviewViewHolder extends RecyclerView.ViewHolder {
+        TextView name, comment, contact;
+        AppCompatRatingBar rating;
 
-        ViewHolder(View itemView) {
+        public ReviewViewHolder(@NonNull View itemView) {
             super(itemView);
-            nameTextView = itemView.findViewById(R.id.name_text_view);
-            ratingBar = itemView.findViewById(R.id.rating_bar);
-            reviewTextView = itemView.findViewById(R.id.review_text_view);
+            name = itemView.findViewById(R.id.review_name);
+            rating = itemView.findViewById(R.id.review_rating);
+            comment = itemView.findViewById(R.id.review_comment);
+            contact = itemView.findViewById(R.id.review_contact);
         }
     }
 }

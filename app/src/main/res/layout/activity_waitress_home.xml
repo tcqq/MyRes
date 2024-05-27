@@ -7,6 +7,7 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
+            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -32,6 +33,7 @@
                     android:id="@+id/view_orders_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="View Orders"
                     android:textAppearance="?attr/textAppearanceButton" />
 
@@ -39,7 +41,7 @@
                     android:id="@+id/view_service_requests_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="View Service Requests"
                     android:textAppearance="?attr/textAppearanceButton" />
 

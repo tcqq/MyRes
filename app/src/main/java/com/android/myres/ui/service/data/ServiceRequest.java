@@ -1,29 +1,30 @@
 package com.android.myres.ui.service.data;
 
-/**
- * @author Perry Lance
- * @since 2024-05-18 Created
- */
 public class ServiceRequest {
-    private String requestNumber;
-    private String requestDetails;
-    private String requestStatus;
 
-    public ServiceRequest(String requestNumber, String requestDetails, String requestStatus) {
-        this.requestNumber = requestNumber;
-        this.requestDetails = requestDetails;
-        this.requestStatus = requestStatus;
+    private String userId;
+    private String userName;
+    private long timestamp;
+
+    public ServiceRequest() {
+        // Default constructor required for calls to DataSnapshot.getValue(ServiceRequest.class)
     }
 
-    public String getRequestNumber() {
-        return requestNumber;
+    public ServiceRequest(String userId, String userName, long timestamp) {
+        this.userId = userId;
+        this.userName = userName;
+        this.timestamp = timestamp;
     }
 
-    public String getRequestDetails() {
-        return requestDetails;
+    public String getUserId() {
+        return userId;
     }
 
-    public String getRequestStatus() {
-        return requestStatus;
+    public String getUserName() {
+        return userName;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
     }
 }

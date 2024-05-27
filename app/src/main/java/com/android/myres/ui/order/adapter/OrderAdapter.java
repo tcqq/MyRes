@@ -13,11 +13,7 @@ import com.android.myres.ui.order.data.Order;
 
 import java.util.List;
 
-/**
- * @author Perry Lance
- * @since 2024-05-18 Created
- */
-public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
+public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
 
     private List<Order> orderList;
 
@@ -27,17 +23,17 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_order, parent, false);
-        return new ViewHolder(view);
+        return new OrderViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
         Order order = orderList.get(position);
-        holder.orderNumberTextView.setText(order.getOrderNumber());
-        holder.orderDetailsTextView.setText(order.getOrderDetails());
-        holder.orderStatusTextView.setText(order.getOrderStatus());
+        holder.orderIdTextView.setText(order.getOrderId());
+        holder.orderStatusTextView.setText(order.getStatus());
+        // Populate other fields as necessary
     }
 
     @Override
@@ -45,15 +41,14 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         return orderList.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView orderNumberTextView;
-        TextView orderDetailsTextView;
+    static class OrderViewHolder extends RecyclerView.ViewHolder {
+
+        TextView orderIdTextView;
         TextView orderStatusTextView;
 
-        ViewHolder(View itemView) {
+        public OrderViewHolder(@NonNull View itemView) {
             super(itemView);
-            orderNumberTextView = itemView.findViewById(R.id.order_number_text_view);
-            orderDetailsTextView = itemView.findViewById(R.id.order_details_text_view);
+            orderIdTextView = itemView.findViewById(R.id.order_id_text_view);
             orderStatusTextView = itemView.findViewById(R.id.order_status_text_view);
         }
     }

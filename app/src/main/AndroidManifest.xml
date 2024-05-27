@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,25 +14,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyRes"
         tools:targetApi="31">
+        <service
+            android:name=".ui.service.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".ui.review.ReviewActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.account.LoginActivity" />
-        <activity android:name=".ui.account.ClientRegisterActivity" />
+<!--        <activity android:name=".ui.MainActivity" />-->
+        <activity android:name=".ui.account.UserRegisterActivity" />
         <activity android:name=".ui.home.ClientHomeActivity" />
         <activity android:name=".ui.restaurant.RestaurantDetailActivity" />
-        <activity android:name=".ui.restaurant.MenuActivity" />
+        <activity android:name=".ui.restaurant.MenuClientActivity" />
         <activity android:name=".ui.order.OrderTrackingActivity" />
         <activity android:name=".ui.order.PaymentActivity" />
         <activity android:name=".ui.order.ViewOrdersActivity" />
         <activity android:name=".ui.order.UpdateOrderStatusActivity" />
-        <activity android:name=".ui.restaurant.ReviewActivity" />
         <activity android:name=".ui.service.ServiceRequestActivity" />
         <activity android:name=".ui.service.ViewServiceRequestsActivity" />
         <activity android:name=".ui.home.OwnerHomeActivity" />

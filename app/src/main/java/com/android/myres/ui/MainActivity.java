@@ -10,7 +10,7 @@ import com.android.myres.common.base.BaseActivity;
 import com.android.myres.databinding.ActivityMainBinding;
 import com.android.myres.ui.account.AddKitchenWorkerActivity;
 import com.android.myres.ui.account.AddWaitressActivity;
-import com.android.myres.ui.account.ClientRegisterActivity;
+import com.android.myres.ui.account.UserRegisterActivity;
 import com.android.myres.ui.account.LoginActivity;
 import com.android.myres.ui.home.ClientHomeActivity;
 import com.android.myres.ui.home.KitchenWorkerHomeActivity;
@@ -19,10 +19,9 @@ import com.android.myres.ui.home.WaitressHomeActivity;
 import com.android.myres.ui.order.OrderTrackingActivity;
 import com.android.myres.ui.order.PaymentActivity;
 import com.android.myres.ui.restaurant.AddRestaurantActivity;
-import com.android.myres.ui.restaurant.MenuActivity;
+import com.android.myres.ui.restaurant.MenuClientActivity;
 import com.android.myres.ui.restaurant.MenuManagementActivity;
 import com.android.myres.ui.restaurant.RestaurantDetailActivity;
-import com.android.myres.ui.restaurant.ReviewActivity;
 import com.android.myres.ui.restaurant.UpdateRestaurantActivity;
 import com.android.myres.ui.restaurant.ViewReviewsActivity;
 import com.android.myres.ui.service.ServiceRequestActivity;
@@ -39,7 +38,7 @@ public class MainActivity extends BaseActivity {
         setActionBarTitle(R.string.app_name);
 
         binding.clientRegister.setOnClickListener(v -> {
-            startActivity(new Intent(this, ClientRegisterActivity.class));
+            startActivity(new Intent(this, UserRegisterActivity.class));
         });
         binding.login.setOnClickListener(v -> {
             startActivity(new Intent(this, LoginActivity.class));
@@ -51,7 +50,7 @@ public class MainActivity extends BaseActivity {
             startActivity(new Intent(this, RestaurantDetailActivity.class));
         });
         binding.menu.setOnClickListener(v -> {
-            startActivity(new Intent(this, MenuActivity.class));
+            startActivity(new Intent(this, MenuClientActivity.class));
         });
         binding.orderTracking.setOnClickListener(v -> {
             startActivity(new Intent(this, OrderTrackingActivity.class));
@@ -60,7 +59,7 @@ public class MainActivity extends BaseActivity {
             startActivity(new Intent(this, PaymentActivity.class));
         });
         binding.review.setOnClickListener(v -> {
-            startActivity(new Intent(this, ReviewActivity.class));
+            startActivity(new Intent(this, ViewReviewsActivity.class));
         });
         binding.serviceRequest.setOnClickListener(v -> {
             startActivity(new Intent(this, ServiceRequestActivity.class));
